@@ -4,6 +4,7 @@ Pod::Spec.new do |s|
   s.license = 'Apache'
   s.summary = 'A lightweight generic cache for iOS written in Swift with extra love for images.'
   s.homepage = 'https://github.com/nghialv/Net'
+  s.module_name = 'NetSwift'
   # s.authors = { 'Hermes Pique' => 'https://twitter.com/hpique' }
   s.source = { :git => 'https://github.com/mente/Net', :branch => 'production' }
 

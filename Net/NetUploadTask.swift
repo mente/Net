@@ -112,7 +112,7 @@ public class UploadTask
         self.progressHandler?(progress)
     }
     
-    func didComplete(_ data: NSData, _ response: NSURLResponse, _ error: NSError?) {
+    func didComplete(data: NSData, _ response: NSURLResponse, _ error: NSError?) {
         state = error != nil ? .Failed : .Completed
         if (error != nil) {
             self.failureHandler?(error)

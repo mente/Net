@@ -163,8 +163,12 @@ public class Net : NSObject, NSURLSessionDataDelegate, NSURLSessionDownloadDeleg
         
         return downloader
     }
+
+    // MARK: - Upload
+    public func upload(url: String, data: NSData, startImmediately: Bool = true, successHandler: SuccessHandler? = nil, failureHandler: FailureHandler? = nil, progressHandler: ProgressHandler? = nil) -> UploadTask? {
+        return upload(absoluteUrl: "\(baseUrl.absoluteString!)\(url)", data: data, startImmediately: startImmediately, successHandler: successHandler, failureHandler: failureHandler, progressHandler: progressHandler)
+    }
     
-    // UPLOAD
     public func upload(# absoluteUrl: String, data: NSData, startImmediately: Bool = true, successHandler: SuccessHandler? = nil, failureHandler: FailureHandler? = nil, progressHandler: ProgressHandler? = nil) -> UploadTask? {
         if uploadSession == nil {
             return nil
@@ -177,6 +181,10 @@ public class Net : NSObject, NSURLSessionDataDelegate, NSURLSessionDownloadDeleg
         }
         
         return uploader
+    }
+    
+    public func upload(url: String, params: NSDictionary, startImmediately: Bool = true, successHandler: SuccessHandler? = nil, failureHandler: FailureHandler? = nil, progressHandler: ProgressHandler? = nil) -> UploadTask? {
+        return upload(absoluteUrl: "\(baseUrl.absoluteString!)\(url)", params: params, startImmediately: startImmediately, successHandler: successHandler, failureHandler: failureHandler, progressHandler: progressHandler)
     }
    
     public func upload(# absoluteUrl: String, params: NSDictionary, startImmediately: Bool = true, successHandler: SuccessHandler? = nil, failureHandler: FailureHandler? = nil, progressHandler: ProgressHandler? = nil) -> UploadTask? {
@@ -191,6 +199,10 @@ public class Net : NSObject, NSURLSessionDataDelegate, NSURLSessionDownloadDeleg
         }
         
         return uploader
+    }
+    
+    public func upload(url: String, fromFile: NSURL, startImmediately: Bool = true, successHandler: SuccessHandler? = nil, failureHandler: FailureHandler? = nil, progressHandler: ProgressHandler? = nil) -> UploadTask? {
+        return upload(absoluteUrl: "\(baseUrl.absoluteString!)\(url)", fromFile: fromFile, startImmediately: startImmediately, successHandler: successHandler, failureHandler: failureHandler, progressHandler: progressHandler)
     }
     
     public func upload(# absoluteUrl: String, fromFile: NSURL, startImmediately: Bool = true, successHandler: SuccessHandler? = nil, failureHandler: FailureHandler? = nil, progressHandler: ProgressHandler? = nil) -> UploadTask? {

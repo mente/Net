@@ -5,7 +5,7 @@ Pod::Spec.new do |s|
   s.summary = 'A lightweight generic cache for iOS written in Swift with extra love for images.'
   s.homepage = 'https://github.com/nghialv/Net'
   # s.authors = { 'Hermes Pique' => 'https://twitter.com/hpique' }
-  s.source = { :git => 'https://github.com/mente/Net', :branch => 'podspec' }
+  s.source = { :git => 'https://github.com/mente/Net', :branch => 'production' }
 
   s.ios.deployment_target = '8.0'
 
